@@ -3,6 +3,9 @@
   <persistence-unit name="pu" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Entity.Customer</class>
+    <class>Entity.DiscountType</class>
+    <class>Entity.DiscountFixed</class>
+    <class>Entity.DiscountQuantity</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/JPA_Demo?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
