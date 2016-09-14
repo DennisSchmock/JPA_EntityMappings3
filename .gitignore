@@ -9,6 +9,7 @@ dist/
 nbdist/
 .nb-gradle/
 target/
+persistence.xml
 
 
 ### Windows ###
