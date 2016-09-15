@@ -6,10 +6,15 @@
 package Entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -25,6 +30,8 @@ public class Customer implements Serializable {
     private String fName;
     private String lName;
     
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "customer")
+    private List<DiscountType> discounts = new ArrayList<>(); 
     
 
     public Integer getId() {
@@ -38,7 +45,7 @@ public class Customer implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (getId() != null ? getId().hashCode() : 0);
         return hash;
     }
 
@@ -49,7 +56,7 @@ public class Customer implements Serializable {
             return false;
         }
         Customer other = (Customer) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -57,7 +64,7 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return "Entity.Customer[ id=" + id + " ]";
+        return "Entity.Customer[ id=" + getId() + " ]";
     }
 
     /**
@@ -87,5 +94,22 @@ public class Customer implements Serializable {
     public void setlName(String lName) {
         this.lName = lName;
     }
+
+    /**
+     * @return the discounts
+     */
+    public List<DiscountType> getDiscounts() {
+        return discounts;
+    }
+
+    /**
+     * @param discounts the discounts to set
+     */
+    public void setDiscounts(List<DiscountType> discounts) {
+        this.discounts = discounts;
+    }
     
+    public void addDiscount(DiscountType discount){
+        this.discounts.add(discount);
+    }
 }

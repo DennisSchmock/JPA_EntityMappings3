@@ -1,0 +1,15 @@
+1. Implemented
+2. Implemented
+3. Implemented
+
+4. 
+When running the project and generating the tables with the SINGLE_TABLE strategy
+selected, following columns are generated in the DiscountType table:
+ID - which is the primary key
+Discount - which corrensponds the field in the subclass DiscountFixed
+QUANTITYFORDISCOUNT - which corrensponds the field in the subclass DiscountQuantity
+DTYPE - which is the Discriminator Table. The values in this column describes which
+subclass is being used. If a subclass DiscountQuantity is used, it will be the value in 
+the selected row. 
+
+5. 
