@@ -21,6 +21,7 @@ import javax.persistence.OneToMany;
  * @author dennisschmock
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class DiscountType implements Serializable {
 
     @ManyToOne

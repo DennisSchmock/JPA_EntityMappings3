@@ -11,5 +11,7 @@ QUANTITYFORDISCOUNT - which corrensponds the field in the subclass DiscountQuant
 DTYPE - which is the Discriminator Table. The values in this column describes which
 subclass is being used. If a subclass DiscountQuantity is used, it will be the value in 
 the selected row. 
+CUSTOMER_ID: Since I chose to do a bi-directional oneToMany relationship, this is a foreign
+key pointing back to the customer. 
 
 5. 
