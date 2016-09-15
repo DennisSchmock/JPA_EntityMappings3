@@ -5,10 +5,20 @@
  */
 package main;
 
+import Entity.Customer;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author Dennis
  */
 public class Tester {
-    
+    public static void main(String[] args) {
+        Persistence.generateSchema("pu", null);
+        EntityManagerFactory emf;
+      //  EntityManager em = emf.createEntityManager();
+        Customer cus = new Customer();
+    }
 }

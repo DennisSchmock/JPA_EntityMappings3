@@ -25,6 +25,10 @@ public class DiscountType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    public double calcDiscount(double priceItem, int quantity){
+        return priceItem * quantity;
+    }
 
     public Integer getId() {
         return id;

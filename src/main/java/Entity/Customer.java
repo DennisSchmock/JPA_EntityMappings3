@@ -22,6 +22,10 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String fName;
+    private String lName;
+    
+    
 
     public Integer getId() {
         return id;
@@ -54,6 +58,34 @@ public class Customer implements Serializable {
     @Override
     public String toString() {
         return "Entity.Customer[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the fName
+     */
+    public String getfName() {
+        return fName;
+    }
+
+    /**
+     * @param fName the fName to set
+     */
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    /**
+     * @return the lName
+     */
+    public String getlName() {
+        return lName;
+    }
+
+    /**
+     * @param lName the lName to set
+     */
+    public void setlName(String lName) {
+        this.lName = lName;
     }
     
 }

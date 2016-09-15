@@ -19,11 +19,12 @@ import javax.persistence.Id;
 public class DiscountFixed extends DiscountType implements Serializable {
 
     private static final long serialVersionUID = 1L;
-   
+    private double discount = 0.1;
     
-
-   
-
+    @Override   
+    public double calcDiscount(double priceItem, int quantity){
+        return priceItem * discount * quantity;
+    }
     
     
     
